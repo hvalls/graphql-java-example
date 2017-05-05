@@ -4,6 +4,7 @@ import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.GraphQLError;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class GQLController {
     @Autowired
     GraphQL graphQL;
 
-    @PostMapping("/graphql")
+    @PostMapping(value = "/graphql", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Map<String, Object> graphql(@RequestBody String body) {
         ExecutionResult result = graphQL.execute(body);
         List<GraphQLError> errors = result.getErrors();
