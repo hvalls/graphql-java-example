@@ -17,7 +17,6 @@ import java.util.Map;
 @Controller
 public class GQLController {
 
-
     @Autowired
     GraphQL graphQL;
 

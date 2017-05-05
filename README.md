@@ -82,3 +82,8 @@ ContentType: application/json
     }
 }
 ```
+
+## Database
+
+A H2 database is created and some users are inserted on server start. See[import.sql](https://github.com/hvalls/graphql-java-example/blob/master/src/main/resources/import.sql).
+Data source configuration is located in [application.properties](https://github.com/hvalls/graphql-java-example/blob/master/src/main/resources/application.properties)file.
